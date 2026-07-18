@@ -42,7 +42,7 @@ git clone https://github.com/atharva-9423/unprof.git
 cd unprof/day-18
 
 pip install -r requirements.txt
-export GEMINI_API_KEY="your-key-here"     # see Day 17 for setup details
+$env:GEMINI_API_KEY="your-actual-api-key-here"
 
 python main.py
 ```
