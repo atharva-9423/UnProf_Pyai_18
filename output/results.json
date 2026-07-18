@@ -1,0 +1,107 @@
+{
+  "task_question": "Sarah has 3 boxes of apples. Each box contains 12 apples. She gives away 8 apples, then buys 2 more boxes of 15 apples each. How many apples does she have now?",
+  "expected_answer": 58,
+  "generated_at": "2026-07-18T12:46:26.558992+00:00",
+  "results": [
+    {
+      "id": 1,
+      "variant": "Naive / Zero-shot",
+      "technique": "Bare question, no instructions at all.",
+      "temperature": 0.7,
+      "system_prompt": null,
+      "user_prompt": "Sarah has 3 boxes of apples. Each box contains 12 apples. She gives away 8 apples, then buys 2 more boxes of 15 apples each. How many apples does she have now?",
+      "response": "Sarah has **58** apples now. \n\nHere is the step-by-step breakdown:\n\n1. **Initial apples:** 3 boxes \u00d7 12 apples = 36 apples\n2. **After giving some away:** 36 - 8 = 28 apples\n3. **Buying more:** 2 boxes \u00d7 15 apples = 30 apples\n4. **Total apples:** 28 + 30 = 58 apples",
+      "correct": true
+    },
+    {
+      "id": 2,
+      "variant": "Zero-shot + explicit instruction",
+      "technique": "Adds a direct instruction to show the working.",
+      "temperature": 0.7,
+      "system_prompt": null,
+      "user_prompt": "Sarah has 3 boxes of apples. Each box contains 12 apples. She gives away 8 apples, then buys 2 more boxes of 15 apples each. How many apples does she have now? Show your working and give the final number clearly.",
+      "response": "Here is the step-by-step working to find the total number of apples Sarah has:\n\n1. **Calculate the initial number of apples:**\n   Sarah starts with 3 boxes of 12 apples each.\n   $$\\text{Initial apples} = 3 \\times 12 = 36\\text{ apples}$$\n\n2. **Subtract the apples she gives away:**\n   She gives away 8 apples.\n   $$\\text{Apples remaining} = 36 - 8 = 28\\text{ apples}$$\n\n3. **Calculate the number of new apples she buys:**\n   She buys 2 more boxes of 15 apples each.\n   $$\\text{New apples} = 2 \\times 15 = 30\\text{ apples}$$\n\n4. **Calculate the final total:**\n   Add the new apples to her remaining apples.\n   $$\\text{Total apples} = 28 + 30 = 58\\text{ apples}$$\n\nSarah now has **58** apples.",
+      "correct": true
+    },
+    {
+      "id": 3,
+      "variant": "System prompt (role-based)",
+      "technique": "A system prompt sets a persona/role before the same question.",
+      "temperature": 0.7,
+      "system_prompt": "You are a meticulous math tutor who never skips a calculation step.",
+      "user_prompt": "Sarah has 3 boxes of apples. Each box contains 12 apples. She gives away 8 apples, then buys 2 more boxes of 15 apples each. How many apples does she have now?",
+      "response": "Hello! I would be absolutely delighted to help you solve this math problem step-by-step. We will break down each part of Sarah's apple journey so we don't miss a single detail. \n\nLet's go through it step-by-step!\n\n---\n\n### **Step 1: Find the initial number of apples Sarah starts with**\nSarah starts with **3 boxes** of apples, and each box contains **12 apples**. \n\nTo find the total, we need to multiply the number of boxes by the number of apples in each box:\n$$\\text{Initial Apples} = 3 \\times 12$$\n\nLet's calculate $3 \\times 12$ by adding 12 three times to be absolutely sure:\n1. First, add the first two boxes: \n   $$12 + 12 = 24$$\n2. Next, add the third box to that sum: \n   $$24 + 12 = 36$$\n\nSo, Sarah starts with **36 apples**.\n\n---\n\n### **Step 2: Subtract the apples she gives away**\nSarah gives away **8 apples**. We need to subtract this from her current total of 36 apples:\n$$\\text{Remaining Apples} = 36 - 8$$\n\nLet's perform this subtraction step-by-step:\n1. First, subtract 6 to get to a friendly tens number: \n   $$36 - 6 = 30$$\n2. Since we need to subtract 8 in total, we still need to subtract 2 more (because $8 = 6 + 2$): \n   $$30 - 2 = 28$$\n\nSo, after giving away 8 apples, Sarah has **28 apples** left.\n\n---\n\n### **Step 3: Calculate how many new apples she buys**\nSarah then buys **2 more boxes**, and each of these new boxes contains **15 apples**. \n\nTo find out how many new apples she bought, we multiply the number of new boxes by the number of apples in each:\n$$\\text{New Apples} = 2 \\times 15$$\n\nLet's calculate $2 \\times 15$ by adding 15 two times:\n$$15 + 15 = 30$$\n\nSo, Sarah bought **30 new apples**.\n\n---\n\n### **Step 4: Find the final total of apples**\nFinally, we add the new apples she bought to the apples she had remaining:\n$$\\text{Final Total} = 28 \\text{ (remaining apples)} + 30 \\text{ (new apples)}$$\n\nLet's add these two numbers together:\n1. Add the tens place first: \n   $$20 + 30 = 50$$\n2. Now, add the remaining 8 from the 28: \n   $$50 + 8 = 58$$\n\n---\n\n### **Conclusion**\nSarah has exactly **58 apples** now!",
+      "correct": true
+    },
+    {
+      "id": 4,
+      "variant": "Few-shot prompting",
+      "technique": "Two worked examples of similar problems precede the real question.",
+      "temperature": 0.7,
+      "system_prompt": null,
+      "user_prompt": "Q: Tom has 4 packs of pencils with 6 pencils each. He loses 5 pencils, then buys 3 more packs of 6. How many pencils does he have now?\nA: 4 packs x 6 = 24. 24 - 5 = 19. 3 packs x 6 = 18. 19 + 18 = 37. Tom has 37 pencils.\n\nQ: A bakery has 5 trays of 8 muffins each. They sell 12 muffins, then bake 2 more trays of 8. How many muffins are there now?\nA: 5 trays x 8 = 40. 40 - 12 = 28. 2 trays x 8 = 16. 28 + 16 = 44. The bakery has 44 muffins.\n\nQ: Sarah has 3 boxes of apples. Each box contains 12 apples. She gives away 8 apples, then buys 2 more boxes of 15 apples each. How many apples does she have now?\nA:",
+      "response": "3 boxes x 12 = 36. 36 - 8 = 28. 2 boxes x 15 = 30. 28 + 30 = 58. Sarah has 58 apples.",
+      "correct": true
+    },
+    {
+      "id": 5,
+      "variant": "Chain-of-thought (explicit)",
+      "technique": "Adds 'Let's think step by step' to trigger explicit reasoning.",
+      "temperature": 0.7,
+      "system_prompt": null,
+      "user_prompt": "Sarah has 3 boxes of apples. Each box contains 12 apples. She gives away 8 apples, then buys 2 more boxes of 15 apples each. How many apples does she have now?\nLet's think step by step.",
+      "response": "Let's think step by step:\n\n1. **Find the initial number of apples:** \n   Sarah starts with 3 boxes of 12 apples each. \n   $$3 \\times 12 = 36 \\text{ apples}$$\n\n2. **Subtract the apples she gives away:** \n   She gives away 8 apples.\n   $$36 - 8 = 28 \\text{ apples}$$\n\n3. **Calculate the number of new apples she buys:** \n   She buys 2 more boxes with 15 apples in each.\n   $$2 \\times 15 = 30 \\text{ apples}$$\n\n4. **Add the new apples to her current total:** \n   $$28 + 30 = 58 \\text{ apples}$$\n\nSarah has **58** apples now.",
+      "correct": true
+    },
+    {
+      "id": 6,
+      "variant": "Few-shot + Chain-of-thought combined",
+      "technique": "Combines worked examples AND an explicit step-by-step instruction.",
+      "temperature": 0.7,
+      "system_prompt": null,
+      "user_prompt": "Q: Tom has 4 packs of pencils with 6 pencils each. He loses 5 pencils, then buys 3 more packs of 6. How many pencils does he have now?\nA: 4 packs x 6 = 24. 24 - 5 = 19. 3 packs x 6 = 18. 19 + 18 = 37. Tom has 37 pencils.\n\nQ: A bakery has 5 trays of 8 muffins each. They sell 12 muffins, then bake 2 more trays of 8. How many muffins are there now?\nA: 5 trays x 8 = 40. 40 - 12 = 28. 2 trays x 8 = 16. 28 + 16 = 44. The bakery has 44 muffins.\n\nQ: Sarah has 3 boxes of apples. Each box contains 12 apples. She gives away 8 apples, then buys 2 more boxes of 15 apples each. How many apples does she have now?\nA: Let's think step by step.",
+      "response": "3 boxes x 12 = 36. 36 - 8 = 28. 2 boxes x 15 = 30. 28 + 30 = 58. Sarah has 58 apples.",
+      "correct": true
+    },
+    {
+      "id": 7,
+      "variant": "System + Chain-of-thought",
+      "technique": "Combines a role-setting system prompt with explicit step-by-step reasoning.",
+      "temperature": 0.7,
+      "system_prompt": "You are a careful math tutor. Always reason step by step before answering.",
+      "user_prompt": "Sarah has 3 boxes of apples. Each box contains 12 apples. She gives away 8 apples, then buys 2 more boxes of 15 apples each. How many apples does she have now?\nLet's think step by step.",
+      "response": "[ERROR] Request error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.5-flash\\nPlease retry in 33.564812317s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.5-flash'}, 'quotaValue': '5'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '33s'}]}}",
+      "correct": false
+    },
+    {
+      "id": 8,
+      "variant": "Low temperature (0.0)",
+      "technique": "Same as the best-performing prompt above, but temperature forced to 0 for determinism.",
+      "temperature": 0.0,
+      "system_prompt": "You are a careful math tutor. Always reason step by step before answering.",
+      "user_prompt": "Sarah has 3 boxes of apples. Each box contains 12 apples. She gives away 8 apples, then buys 2 more boxes of 15 apples each. How many apples does she have now?\nLet's think step by step.",
+      "response": "[ERROR] Request error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.5-flash\\nPlease retry in 33.332150751s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.5-flash'}, 'quotaValue': '5'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '33s'}]}}",
+      "correct": false
+    },
+    {
+      "id": 9,
+      "variant": "High temperature (1.5)",
+      "technique": "Same prompt as #8, but with a high temperature to test consistency loss.",
+      "temperature": 1.5,
+      "system_prompt": "You are a careful math tutor. Always reason step by step before answering.",
+      "user_prompt": "Sarah has 3 boxes of apples. Each box contains 12 apples. She gives away 8 apples, then buys 2 more boxes of 15 apples each. How many apples does she have now?\nLet's think step by step.",
+      "response": "[ERROR] Request error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.5-flash\\nPlease retry in 33.05950067s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.5-flash'}, 'quotaValue': '5'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '33s'}]}}",
+      "correct": false
+    },
+    {
+      "id": 10,
+      "variant": "Constrained output format",
+      "technique": "Forces a strict final-answer-only format to test whether structure hurts reasoning.",
+      "temperature": 0.0,
+      "system_prompt": "You are a careful math tutor. Always reason step by step before answering.",
+      "user_prompt": "Sarah has 3 boxes of apples. Each box contains 12 apples. She gives away 8 apples, then buys 2 more boxes of 15 apples each. How many apples does she have now?\nLet's think step by step. End your response with exactly one line formatted as: FINAL ANSWER: <number>",
+      "response": "[ERROR] Request error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.5-flash\\nPlease retry in 32.664363307s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.5-flash'}, 'quotaValue': '5'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '32s'}]}}",
+      "correct": false
+    }
+  ]
+}
